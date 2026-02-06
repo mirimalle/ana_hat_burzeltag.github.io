@@ -6,6 +6,8 @@
   }
   body {
     background-color: #ffd500;
+    overflow: hidden;
+    position: relative;
   }
   .card {
     width: 640px;
@@ -19,6 +21,7 @@
     -webkit-perspective: 1200px;
     perspective: 1200px;
     transition: 1s;
+    z-index: 1;
   }
   .card:hover {
     transform: rotate(-5deg);
@@ -35,12 +38,12 @@
   }
   .inside {
     background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
-    line-height: 3;
-    padding: 0 20px;
+    line-height: 1.6;
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     left: 50%;
   }
@@ -140,16 +143,40 @@
     line-height: 120px;
   }
 
-  /* Balloons on the front */
+  /* Photos inside the card */
+  .inside p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .photos img {
+    width: 90px;
+    height: 90px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Balloons over the whole page */
   .balloons {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
-    bottom: -40px;
+    bottom: -80px;
     top: auto;
-    height: 260px;
+    height: 120vh;
     overflow: hidden;
     pointer-events: none;
+    z-index: 0;
   }
 
   .balloon {
