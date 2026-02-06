@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
   }
   body {
-    background-color: #f476dd;
+    background-color: #ffd500;
   }
   .card {
     width: 640px;
@@ -138,4 +138,68 @@
   .inside h1 {
     font-size: 120px;
     line-height: 120px;
+  }
+
+  /* Balloons on the front */
+  .balloons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    top: auto;
+    height: 260px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .balloon {
+    position: absolute;
+    width: 40px;
+    height: 55px;
+    border-radius: 50% 50% 45% 45%;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    animation: rise 6s linear infinite;
+  }
+
+  .balloon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    width: 2px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+  }
+
+  .b1 {
+    background: #ff6b6b;
+    left: 18%;
+    animation-delay: 0s;
+  }
+
+  .b2 {
+    background: #6bcfff;
+    left: 45%;
+    animation-delay: 1s;
+  }
+
+  .b3 {
+    background: #8cf57b;
+    left: 72%;
+    animation-delay: 2s;
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(80px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-220px);
+      opacity: 0;
+    }
   }
